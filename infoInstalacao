@@ -1,0 +1,21 @@
+Installation
+
+The following procedure will install the open source display driver packages, DRI modules (for 3D acceleration) and driver firmware/microcode:
+
+    Add "contrib" and "non-free" components to /etc/apt/sources.list, for example:
+
+    # Debian 8 "Jessie"
+    deb http://httpredir.debian.org/debian/ jessie main contrib non-free
+
+    Update the list of available packages:
+
+    # apt-get update
+
+    Install the firmware-linux-nonfree, libgl1-mesa-dri and xserver-xorg-video-ati packages:
+
+    # apt-get install firmware-linux-nonfree libgl1-mesa-dri xserver-xorg-video-ati
+
+    Restart your system to load GPU device firmware. 
+
+Link:https://wiki.debian.org/AtiHowTo#Installation
+
