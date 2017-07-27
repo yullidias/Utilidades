@@ -1,2 +1,2 @@
 # Utilidades
-Neste repósitorio haverá informações que são útil e posso precisar novamente.
+Neste repósitorio haverá informações que são úteis e posso precisar novamente.
