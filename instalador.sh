@@ -1,10 +1,14 @@
 #!/bin/bash
 
-function latex(){
+function Latex(){
 # Instalar distribuição tex, normas abnt, texstudio e corretor ortografico respectivamente
-	sudo apt-get install texlive-full abntex texstudio aspell
+	sudo apt-get install --yes texlive-full abntex texstudio aspell
 }
 
-echo "runnig..."
 
-
+instalar=$(zenity --list --checklist --column "instalar" --column "Programas" FALSE Latex)
+IFS="|"
+programas="$instalar"
+for p in $programas; do
+	$p #executa função
+done
