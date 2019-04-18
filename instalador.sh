@@ -1,18 +1,27 @@
 #!/bin/bash
 
-function Latex(){
+function Latex()
+{
 # Instalar distribuição tex, normas abnt, texstudio e corretor ortografico respectivamente
 	sudo apt-get install --yes texlive-full abntex texstudio aspell
 }
 
-function VirtualBoxAMD64(){
+function VirtualBoxAMD64()
+{
 	wget https://download.virtualbox.org/virtualbox/5.2.8/virtualbox-5.2_5.2.8-121009~Debian~jessie_amd64.deb
 	sudo dpkg -i virtualbox*.deb
 	sudo apt-get install linux-headers-amd64 linux-headers-3.16.0-4-amd64
 	sudo /sbin/vboxconfig
 }
 
-instalar=$(zenity --list --checklist --column "instalar" --column "Programas" FALSE Latex FALSE VirtualBoxAMD64
+function Atom()
+{
+	sudo add-apt-repository -y ppa:webupd8team/atom
+	sudo apt-get update
+	sudo apt-get install --yes atom
+}
+
+instalar=$(zenity --list --checklist --column "instalar" --column "Programas" FALSE Latex FALSE VirtualBoxAMD64 FALSE Atom
 )
 IFS="|"
 programas="$instalar"
